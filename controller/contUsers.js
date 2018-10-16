@@ -8,27 +8,29 @@ router.get('/', (req, res)=>{
         res.render('users/index.ejs', {users: foundUsers})
     })
 });
-  
-  router.get('/new', (req, res) => {
-    res.render('users/new.ejs');
-  });
-  
-  router.get('/:id',(req, res) => {
-    Users.findById(req.params.id, (err, userFound) => {
-      res.render('users/show.ejs', {
-        user: userFound
-      })
-    });
-  });
-  
-  
-  router.get('/:id/edit', (req, res) => {
+//recursion when a method runs through its self
+router.get('/:id/edit', (req, res) => {
     Users.findById(req.params.id, (err, editUser) => {
       res.render('users/edit.ejs', {
         user: editUser
       });
     });
+ });
+//if you see it in url you're sending a get request, you need a post request
+router.get('/new', (req, res) => {
+    res.render('users/new.ejs');
+});
+  
+router.get('/:id',(req, res) => {
+    Users.findById(req.params.id, (err, userFound) => {
+      res.render('users/show.ejs', {
+        user: userFound
+      });
+    });
   });
+  
+  
+ 
   
   router.post('/', (req, res) => {
   
