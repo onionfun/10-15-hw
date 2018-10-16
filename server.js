@@ -10,8 +10,8 @@ const photosController = require('./controller/contPhotos');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 //midware
-app.use('/photos', contPhotos);
-app.use('/users', contUsers);
+app.use('/users', usersController);
+app.use('/photos', photosController);
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
