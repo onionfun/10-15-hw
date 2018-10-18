@@ -8,9 +8,23 @@
 </head>
 <body>
     <h1>Edit Page</h1>
-    <form action="users/<%=users.id%>?_method=PUT" method="POST">
-    <input type="text" name="name" value="<%=user.name%>"/>
-    <input type="submit" value="Update User"/>
-    </form>
+
+    <select name="users">
+    <%for (let i = 0; i < users.length; i++) { %>
+       <option value="<%=users[i].id%>"><%=users[i].name%></option>
+       <input type="text" name="title" /><br/>
+       <%}%> 
 </body>
 </html>
+
+
+<!--form action="/articles/<,article._id>?_method=PUT" method=POST>
+select name="authorID">
+<& for let i =  0 i <authors.length; i++ {>
+<option value="<% authors[i].id>" selected
+    <%if(authors[i]._id.toString() ===articleAuthor._id.toString())%>)
+    ></option>} 
+    // <% for(let i=0; i<users.length; i++){%>
+// <a href="/users/<%=users[i]%>"></a>
+//    <a href="/users/<%=users[i]._id%>/edit">Improve name</a>
+<%}%>-->

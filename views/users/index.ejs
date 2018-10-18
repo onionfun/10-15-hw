@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index Page</title>
+    <title>Users Page</title>
 </head>
 <body>
-<h1>Index Page</h1>
-<% for(let i=0; i<users.length; i++){%>
-<a href="/users/<%=users[i]%>"></a>
-    <%}%>
-<a href="/monsters/<%=monsters[i]._id%>/edit">Improve name</a>
-<a href='/monsters/new'>New monster</a> 
+<h1>Users Index Page</h1>
+
+<a href='/users/new'>New User</a>
+<% for (let i = 0; i < users.length; i++){%>
+<li><a href="/users/<%=users[i].id%>"><%=users[i].name %></a></li>
     
 </body>
 </html>
